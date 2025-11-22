@@ -5,9 +5,9 @@ function App() {
   return (
     <>
     <Search />
-    <div style={{ padding: "2 rem", fontFamily: "sans-serif"}}>
+    <div style={{ padding: "0", fontFamily: "sans-serif"}}>
       <h1>Github User Search</h1>
-      <p>Search for Github users by their user name</p>
+      <p>Search for Github users by their user name.</p>
     </div>
     </>
   );

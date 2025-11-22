@@ -26,8 +26,8 @@ const Search = () => {
     };
 
     return (
-        <>
-            <form onSubmit={handleSubmit} style={{ marginBottom: "1rem" }}>
+        <div className="center-page">
+            <form onSubmit={handleSubmit} style={{ marginLeft: "auto", marginRight: "auto", display: "flex", alignItems: "center" }}>
                 <input
                     type="text"
                     placeholder="Enter GitHub username"
@@ -37,6 +37,10 @@ const Search = () => {
                 />
                 <button type="submit" style={{ marginLeft: "0.5rem", padding: "0.5rem 1rem" }}>
                     Search
+                </button>
+
+                <button onClick={() => { setUsername(""); setUser(null); setError(null); }} type="reset" style={{ marginLeft: "0.5rem", padding: "0.5rem 1rem" }}>
+                    Clear
                 </button>
             </form>
             {loading && <p>Loading...</p>}
@@ -50,7 +54,7 @@ const Search = () => {
                     </a>
                 </div>
             )}
-        </>
+        </div>
     );
 };
 
