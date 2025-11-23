@@ -3,13 +3,11 @@ import Search from "./components/Search";
 
 function App() {
   return (
-    <>
-    <Search />
-    <div style={{ padding: "0", fontFamily: "sans-serif"}}>
+    <div className="center-page">
+      <Search />
       <h1>Github User Search</h1>
       <p>Search for Github users by their user name.</p>
     </div>
-    </>
   );
 }
 
