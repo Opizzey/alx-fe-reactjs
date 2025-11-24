@@ -3,10 +3,10 @@ import Search from "./components/Search";
 
 function App() {
   return (
-    <div className="center-page">
+    <div className="min-h-screen flex flex-col justify-center items-center bg-white">
       <Search />
-      <h1>Github User Search</h1>
-      <p>Search for Github users by their user name.</p>
+      <h1 className="text-center font-bold text-2xl mt-6">Github User Search</h1>
+      <p className="text-center text-gray-700">Search for Github users by their user name.</p>
     </div>
   );
 }
