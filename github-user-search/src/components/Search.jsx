@@ -22,7 +22,7 @@ const Search = () => {
             setUsers(fetchedUsers);
             setHasMore(more);
         } catch {
-            setError("Looks like we can't find any users");
+            setError("Looks like we cant find the user");
         } finally {
             setLoading(false);
         }
@@ -37,7 +37,7 @@ const Search = () => {
             setPage(nextPage);
             setHasMore(more);
         } catch {
-            setError("Looks like we can't find any more users");
+            setError("Looks like we cant find the user");
         } finally {
             setLoading(false);
         }
