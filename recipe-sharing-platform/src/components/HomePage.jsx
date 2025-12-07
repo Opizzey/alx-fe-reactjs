@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import recipeData from '../data.json';
 
 function HomePage() {
@@ -45,12 +46,12 @@ function HomePage() {
               </p>
 
               {/* View Details Link */}
-              <a
-                href={`/recipe/${recipe.id}`}
+              <Link
+                to={`/recipe/${recipe.id}`}
                 className="inline-block text-blue-500 hover:text-blue-700 font-medium text-sm transition-colors duration-200"
               >
                 View Details →
-              </a>
+              </Link>
             </div>
           </div>
         ))}
