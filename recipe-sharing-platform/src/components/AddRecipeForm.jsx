@@ -12,16 +12,15 @@ function AddRecipeForm() {
 
   // Handle input changes
   const handleChange = (e) => {
-    const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [e.target.name]: e.target.value
     });
     // Clear error for this field when user starts typing
-    if (errors[name]) {
+    if (errors[e.target.name]) {
       setErrors({
         ...errors,
-        [name]: ''
+        [e.target.name]: ''
       });
     }
   };
