@@ -17,9 +17,17 @@ function HomePage() {
         <h1 className="text-4xl font-bold text-gray-800 mb-2">
           Recipe Sharing Platform
         </h1>
-        <p className="text-gray-600 text-lg">
+        <p className="text-gray-600 text-lg mb-6">
           Discover and share amazing recipes from around the world
         </p>
+        
+        {/* Add Recipe Button */}
+        <Link
+          to="/add-recipe"
+          className="inline-block bg-green-500 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition-colors duration-300"
+        >
+          + Add New Recipe
+        </Link>
       </header>
 
       {/* Recipe Grid */}
