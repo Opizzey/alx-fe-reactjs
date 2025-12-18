@@ -4,6 +4,9 @@
   "description": "This project demonstrates fetching, caching, and updating data using React Query and the JSONPlaceholder API.",
   "main": "index.js",
   "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -11,6 +14,11 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-query": "^3.39.3"
+  },
+  "devDependencies": {
+    "vite": "^7.3.0"
   }
 }
