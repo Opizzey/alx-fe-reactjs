@@ -8,7 +8,12 @@ export default function PostsComponent() {
   const { data, error, isLoading, isError, refetch, isFetching } = useQuery(
     'posts',
     fetchPosts,
-    { staleTime: 60000 }
+    {
+      staleTime: 60000,
+      cacheTime: 300000, // 5 minutes
+      refetchOnWindowFocus: false,
+      keepPreviousData: true,
+    }
   );
 
   if (isLoading) return <div>Loading posts...</div>;
