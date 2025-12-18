@@ -47,16 +47,13 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route
-          path="/profile"
+          path="/profile/*"
           element={
             <ProtectedRoute isAuth={isAuth}>
               <Profile />
             </ProtectedRoute>
           }
-        >
-          <Route path="details" element={<ProfileDetails />} />
-          <Route path="settings" element={<ProfileSettings />} />
-        </Route>
+        />
         <Route path="/blog/:postId" element={<BlogPost />} />
       </Routes>
       <div className="card">
