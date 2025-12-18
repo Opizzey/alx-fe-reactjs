@@ -1,0 +1,16 @@
+{
+  "name": "react-query-demo",
+  "version": "1.0.0",
+  "description": "This project demonstrates fetching, caching, and updating data using React Query and the JSONPlaceholder API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "react-query": "^3.39.3"
+  }
+}
