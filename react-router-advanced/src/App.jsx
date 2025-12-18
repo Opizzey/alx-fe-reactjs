@@ -1,8 +1,14 @@
-import { BrowserRouter as Router, Routes, Route, Link, Outlet, useParams, Navigate } from 'react-router-dom';
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { useState } from 'react';
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
+import './App.css';
+import Profile from './components/Profile';
+import ProfileDetails from './components/ProfileDetails';
+import ProfileSettings from './components/ProfileSettings';
+import BlogPost from './components/BlogPost';
+import ProtectedRoute from './components/ProtectedRoute';
 
 function Home() {
   return <h2>Home Page</h2>;
@@ -12,46 +18,10 @@ function About() {
   return <h2>About Page</h2>;
 }
 
-// Nested Profile components
-function Profile() {
-  return (
-    <div>
-      <h2>Profile</h2>
-      <nav style={{ margin: 10 }}>
-        <Link to="details" style={{ marginRight: 10 }}>Details</Link>
-        <Link to="settings">Settings</Link>
-      </nav>
-      <Outlet />
-    </div>
-  );
-}
-
-function ProfileDetails() {
-  return <div>Profile Details Section</div>;
-}
-
-function ProfileSettings() {
-  return <div>Profile Settings Section</div>;
-}
-
-// Dynamic Blog Post route
-function BlogPost() {
-  const { postId } = useParams();
-  return <div>Viewing Blog Post ID: {postId}</div>;
-}
-
-// Protected Route component
-function ProtectedRoute({ isAuthenticated, children }) {
-  if (!isAuthenticated) {
-    return <Navigate to="/" replace />;
-  }
-  return children;
-}
 
 function App() {
-  const [count, setCount] = useState(0)
-  // Simulate authentication state
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [count, setCount] = useState(0);
+  const [isAuth, setIsAuth] = useState(false);
 
   return (
     <Router>
@@ -69,8 +39,8 @@ function App() {
         <Link to="/about" style={{ marginRight: 10 }}>About</Link>
         <Link to="/profile" style={{ marginRight: 10 }}>Profile</Link>
         <Link to="/blog/123">Blog Post 123</Link>
-        <button style={{ marginLeft: 20 }} onClick={() => setIsAuthenticated((auth) => !auth)}>
-          {isAuthenticated ? 'Logout' : 'Login'}
+        <button style={{ marginLeft: 20 }} onClick={() => setIsAuth((auth) => !auth)}>
+          {isAuth ? 'Logout' : 'Login'}
         </button>
       </nav>
       <Routes>
@@ -79,7 +49,7 @@ function App() {
         <Route
           path="/profile"
           element={
-            <ProtectedRoute isAuthenticated={isAuthenticated}>
+            <ProtectedRoute isAuth={isAuth}>
               <Profile />
             </ProtectedRoute>
           }
@@ -101,7 +71,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
     </Router>
-  )
+  );
 }
 
 export default App
