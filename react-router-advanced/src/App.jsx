@@ -54,7 +54,7 @@ function App() {
             </ProtectedRoute>
           }
         />
-        <Route path="/blog/:postId" element={<BlogPost />} />
+        <Route path="/blog/:id" element={<BlogPost />} />
       </Routes>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
